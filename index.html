@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mateo Langer | Pre-Law Professional Portfolio</title>
+<meta name="description" content="Mateo Langer: pre-law Business Management student at the University of Arizona and Legal Intern at the Santa Cruz County Attorney's Office.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#F1EDE3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mateo Langer | Pre-Law Professional Portfolio">
+<meta property="og:description" content="Legal Intern at the Santa Cruz County Attorney's Office and pre-law Business Management student at the University of Arizona.">
+<meta property="og:url" content="__SITE_URL__">
+<meta property="og:image" content="__SITE_URL__assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mateo Langer, Legal Intern, pre-law portfolio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="__SITE_URL__assets/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#F1EDE3; --paper:#F8F6F0; --card:#FBFAF5; --ink:#141414; --ink-2:#2B2B2B;
+  --muted:#6E6A62; --hair:#CFC9BB; --soft:#E6E1D5; --accent:#5E1A1A; --grey:#B8B2A4;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;overflow-x:clip;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:19px;line-height:1.75}
+::selection{background:var(--ink);color:var(--bone)}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--ink);line-height:1.15;margin:0 0 .45em}
+h2{font-size:3rem;letter-spacing:.01em}
+h3{font-size:1.9rem}
+strong,b{font-weight:500}
+a{color:var(--ink)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+.caps{font-family:var(--sans);font-size:.74rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+.rule{height:1px;background:var(--hair);border:0;margin:0}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-size:.74rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;text-decoration:none;padding:15px 26px;border:1px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;transition:background .3s,color .3s}
+.btn:hover,.btn:focus-visible{background:var(--ink);color:var(--bone)}
+.btn.solid{background:var(--ink);color:var(--bone)}
+.btn.solid:hover{background:var(--accent);border-color:var(--accent)}
+.btn .arr{transition:transform .3s}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(248,246,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+nav .brand{font-family:var(--serif);font-size:1.3rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+nav ul a{font-size:.7rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;text-decoration:none;color:var(--ink-2);padding:6px 0;border-bottom:1px solid transparent;transition:border-color .3s}
+nav ul a:hover,nav ul a.active{border-color:var(--ink)}
+@media (max-width:860px){nav ul{display:none}}
+
+/* hero */
+.hero{padding:90px 0 100px;text-align:center;background:linear-gradient(var(--paper),var(--bone))}
+.hero .caps{margin-bottom:26px}
+.hero h1{font-size:4.4rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;margin-bottom:.15em}
+.hero .sub{font-family:var(--serif);font-style:italic;font-size:1.45rem;color:var(--ink-2);margin:0 0 50px}
+.card-stage{perspective:1400px;display:flex;justify-content:center;margin-bottom:22px}
+.bizcard{width:min(500px,92vw);aspect-ratio:3.5/2;position:relative;cursor:pointer;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.2,.7,.2,1);border:0;padding:0;background:none;font:inherit;color:inherit}
+.bizcard.flipped{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#F4F0E6;border:1px solid #E2DCCD;box-shadow:0 1px 0 #fff inset,0 30px 60px -20px rgba(20,20,20,.35),0 8px 18px -8px rgba(20,20,20,.2);display:flex;flex-direction:column;justify-content:space-between;padding:7% 8%;text-align:left;background-image:radial-gradient(rgba(0,0,0,.025) 1px,transparent 1px);background-size:3px 3px}
+.face .top{display:flex;justify-content:space-between;font-family:var(--sans);font-size:clamp(.5rem,1.6vw,.66rem);letter-spacing:.2em;text-transform:uppercase;color:#3A3A3A}
+.face .name{text-align:center;font-family:var(--serif);font-size:clamp(1.3rem,4.4vw,2rem);letter-spacing:.32em;text-transform:uppercase;color:#1B1B1B;text-shadow:0 1px 0 rgba(255,255,255,.9),0 -1px 0 rgba(0,0,0,.08)}
+.face .title{text-align:center;font-family:var(--sans);font-size:clamp(.5rem,1.6vw,.66rem);letter-spacing:.3em;text-transform:uppercase;color:#444;margin-top:6px}
+.face .bottom{text-align:center;font-family:var(--sans);font-size:clamp(.48rem,1.5vw,.62rem);letter-spacing:.24em;text-transform:uppercase;color:#3A3A3A}
+.face.back{transform:rotateY(180deg);justify-content:center;gap:12px;text-align:center;align-items:center}
+.face.back a{font-family:var(--sans);font-size:clamp(.55rem,1.8vw,.75rem);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:#1B1B1B;border-bottom:1px solid #BDB6A6;padding-bottom:3px}
+.face.back .mono{font-family:var(--serif);font-size:clamp(1.4rem,5vw,2.3rem);letter-spacing:.3em;margin-bottom:6px}
+.hint{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.purpose{max-width:720px;margin:44px auto 34px;font-family:var(--serif);font-size:1.4rem;line-height:1.55;color:var(--ink-2)}
+@media (max-width:600px){.hero h1{font-size:2.5rem;letter-spacing:.14em}h2{font-size:2.2rem}.hero{padding-top:60px}.chat-fab{right:14px;bottom:14px;padding:13px 16px}}
+.hero .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+section{padding:110px 0}
+section.bone{background:var(--bone);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.head{display:flex;align-items:baseline;gap:22px;margin-bottom:46px}
+.head .no{font-family:var(--serif);font-size:1.1rem;color:var(--muted);font-style:italic}
+.lead{font-family:var(--serif);font-size:1.5rem;line-height:1.5;color:var(--ink-2);max-width:820px}
+
+/* about */
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start}
+.portrait{position:relative}
+.portrait img{width:100%;display:block;filter:grayscale(1) contrast(1.05);transition:filter .8s ease;border:1px solid var(--hair)}
+.portrait:hover img,.portrait.color img{filter:none}
+.portrait figcaption{margin-top:12px;display:flex;justify-content:space-between;align-items:center}
+.portrait button{background:none;border:0;font-family:var(--sans);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);cursor:pointer;border-bottom:1px solid var(--hair);padding:2px 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--hair);margin-top:40px}
+.stat{padding:22px 10px 20px;border-right:1px solid var(--hair)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--serif);font-weight:500;font-size:2.5rem;line-height:1}
+.stat span{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:40px}.portrait{max-width:380px}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--hair)}}
+
+/* story */
+.story{margin:10px 0 70px;display:grid;grid-template-columns:200px 1fr;gap:40px;border-top:1px solid var(--ink);padding-top:30px}
+.story .caps{line-height:1.8}
+.story p{font-family:var(--serif);font-size:1.38rem;line-height:1.6;margin:0}
+.story .moral{display:block;margin-top:18px;font-style:italic}
+@media (max-width:860px){.story{grid-template-columns:1fr;gap:12px}}
+
+/* values flip cards */
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:80px}
+@media (max-width:860px){.values{grid-template-columns:1fr}}
+.vcard{perspective:1000px;height:260px;border:0;padding:0;background:none;cursor:pointer;font:inherit;color:inherit}
+.vcard .in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.vcard.flipped .in{transform:rotateY(180deg)}
+.vcard .f,.vcard .b{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--hair);background:var(--card);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:28px;text-align:center}
+.vcard .f .w{font-family:var(--serif);font-size:2.3rem;letter-spacing:.12em;text-transform:uppercase}
+.vcard .f .caps{margin-top:14px}
+.vcard .b{transform:rotateY(180deg);background:var(--ink);color:var(--bone)}
+.vcard .b p{margin:0;font-size:1rem;line-height:1.6}
+.vcard .b .caps{color:#A9A398;margin-bottom:12px}
+
+/* tabs */
+.tabs{display:flex;border-bottom:1px solid var(--hair);margin-bottom:0;overflow-x:auto}
+.tab{flex:1;min-width:180px;background:none;border:0;border-bottom:2px solid transparent;padding:18px 10px;font-family:var(--sans);font-size:.7rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:color .3s,border-color .3s}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--ink)}
+.tab:hover{color:var(--ink)}
+.panel{background:var(--card);border:1px solid var(--hair);border-top:0;padding:50px}
+.panel[hidden]{display:none}
+.panel.show{animation:fade .6s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.claim{font-family:var(--serif);font-size:2.3rem;font-weight:500;margin-bottom:.3em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:46px;margin-top:30px}
+@media (max-width:860px){.grid2{grid-template-columns:1fr}.panel{padding:28px}.tab{min-width:0;letter-spacing:.12em;font-size:.6rem;padding:16px 4px}}
+.tagline{display:block;font-size:.66rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.panel ul{padding-left:20px;margin:0 0 14px}
+.panel li{margin-bottom:8px}
+blockquote{margin:18px 0;padding:0 0 0 20px;border-left:1px solid var(--ink);font-family:var(--serif);font-style:italic;font-size:1.2rem;line-height:1.5;color:var(--ink-2)}
+blockquote cite{display:block;font-family:var(--sans);font-style:normal;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.reason{margin-top:36px;border-top:1px solid var(--hair);padding-top:26px}
+figure.chart{margin:0;border:1px solid var(--hair);background:var(--paper);padding:20px}
+figure.chart figcaption{font-size:.82rem;color:var(--muted);margin-top:10px;line-height:1.5}
+.legend{display:flex;gap:20px;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.legend i{display:inline-block;width:10px;height:10px;margin-right:7px;vertical-align:0}
+svg text{font-family:var(--sans)}
+.bar{transform-origin:bottom;transform-box:fill-box;transform:scaleY(0);transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.drawn .bar{transform:scaleY(1)}
+.line{stroke-dasharray:500;stroke-dashoffset:500;transition:stroke-dashoffset 1.6s ease}
+.drawn .line{stroke-dashoffset:0}
+
+/* identity toggle */
+.toggle{display:inline-flex;border:1px solid var(--ink);margin:6px 0 18px}
+.toggle button{background:none;border:0;padding:10px 18px;font-family:var(--sans);font-size:.66rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;color:var(--ink)}
+.toggle button[aria-pressed="true"]{background:var(--ink);color:var(--bone)}
+.words{display:flex;flex-wrap:wrap;gap:10px;min-height:120px;align-content:flex-start}
+.word{border:1px solid var(--hair);background:var(--paper);padding:8px 14px;font-family:var(--serif);font-size:1.15rem;animation:pop .45s ease both}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.gapnote{font-size:.95rem;color:var(--muted);margin-top:10px}
+
+.conclusion{margin-top:70px;background:var(--ink);color:var(--bone);padding:56px}
+.conclusion h3{color:var(--bone);font-size:2.2rem}
+.conclusion ol{margin:0;padding:0;list-style:none;counter-reset:c}
+.conclusion li{counter-increment:c;display:grid;grid-template-columns:60px 1fr;padding:18px 0;border-top:1px solid #3A3A3A}
+.conclusion li::before{content:"0" counter(c);font-family:var(--serif);font-size:1.4rem;color:#9C968A}
+@media (max-width:860px){.conclusion{padding:30px}}
+
+/* video */
+.vgrid{display:grid;grid-template-columns:1.5fr 1fr;gap:50px;align-items:center}
+@media (max-width:860px){.vgrid{grid-template-columns:1fr}}
+.video{position:relative;padding-top:56.25%;background:#000;border:1px solid var(--ink)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* portfolio */
+.exhibits{border-top:1px solid var(--ink)}
+.exhibit{border-bottom:1px solid var(--hair)}
+.exhibit summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:130px 1fr auto;gap:24px;align-items:center;padding:30px 4px;transition:padding .3s,background .3s}
+.exhibit summary::-webkit-details-marker{display:none}
+.exhibit summary:hover{background:var(--card);padding-left:14px}
+.exhibit .ex{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.exhibit .t{font-family:var(--serif);font-size:1.75rem;line-height:1.2}
+.exhibit .t small{display:block;font-family:var(--sans);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.exhibit .plus{width:40px;height:40px;border:1px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:1.3rem;transition:transform .4s,background .3s,color .3s}
+.exhibit[open] .plus{transform:rotate(45deg);background:var(--ink);color:var(--bone)}
+.exhibit .detail{display:grid;grid-template-columns:130px 1fr 280px;gap:24px;padding:0 4px 40px}
+.exhibit .detail dl{margin:0;display:grid;grid-template-columns:150px 1fr;gap:10px 20px}
+.exhibit .detail dt{font-size:.66rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;padding-top:6px}
+.exhibit .detail dd{margin:0}
+.exhibit .detail img{width:100%;border:1px solid var(--hair)}
+@media (max-width:860px){.exhibit summary{grid-template-columns:1fr auto}.exhibit .ex{grid-column:1/-1}.exhibit .detail{grid-template-columns:1fr}.exhibit .detail>span{display:none}.exhibit .detail dl{grid-template-columns:1fr}}
+
+/* resume */
+.res{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--ink);margin-top:40px}
+.res .col{padding:30px 34px 10px 0}
+.res .col+.col{border-left:1px solid var(--hair);padding-left:34px}
+.res h4{font-size:1.5rem;margin-bottom:2px}
+.res .meta{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.res ul{padding-left:18px;margin:0 0 30px}
+@media (max-width:860px){.res{grid-template-columns:1fr}.res .col+.col{border-left:0;padding-left:0;border-top:1px solid var(--hair)}}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bone);text-align:center;padding:120px 0}
+.contact h2{color:var(--bone);letter-spacing:.2em;text-transform:uppercase;font-weight:400}
+.contact p{font-family:var(--serif);font-size:1.35rem;color:#CFC9BB;max-width:640px;margin:0 auto 40px}
+.contact .btn{border-color:var(--bone);color:var(--bone)}
+.contact .btn:hover{background:var(--bone);color:var(--ink)}
+.contact .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{background:#0B0B0B;color:#7D776C;text-align:center;padding:24px;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase}
+
+/* recruiter toggle */
+.rtoggle{display:flex;align-items:center;gap:10px;background:none;border:0;cursor:pointer;font-family:var(--sans);font-size:.62rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);padding:6px 0;margin-left:30px}
+.rtoggle .sw{width:34px;height:18px;border:1px solid var(--ink);position:relative;transition:background .3s;flex:none}
+.rtoggle .sw::after{content:"";position:absolute;top:2px;left:2px;width:12px;height:12px;background:var(--ink);transition:transform .3s,background .3s}
+.rtoggle[aria-pressed="true"] .sw{background:var(--ink)}
+.rtoggle[aria-pressed="true"] .sw::after{transform:translateX(16px);background:var(--bone)}
+nav .right{display:flex;align-items:center}
+@media (max-width:860px){.rtoggle{margin-left:0}}
+#brief{display:none;padding:80px 0 100px;background:linear-gradient(var(--paper),var(--bone))}
+body.recruiter #brief{display:block;animation:fade .6s ease}
+body.recruiter>header.hero,body.recruiter>section:not(#brief),body.recruiter nav ul{display:none}
+.brief{display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:start}
+.brief img{width:100%;border:1px solid var(--hair)}
+.brief h2{font-size:2.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400;margin-bottom:.1em}
+.brief .role{font-family:var(--serif);font-style:italic;font-size:1.35rem;margin:0 0 26px}
+.proof{list-style:none;padding:0;margin:0 0 30px;border-top:1px solid var(--ink)}
+.proof li{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--hair)}
+.proof b{font-family:var(--serif);font-size:1.9rem;font-weight:500;line-height:1}
+.seek{border-left:1px solid var(--ink);padding:4px 0 4px 18px;margin-bottom:30px}
+.brief .btns{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:760px){.brief{grid-template-columns:1fr;gap:28px}.brief img{max-width:220px}.brief h2{font-size:2rem}.proof li{grid-template-columns:80px 1fr}}
+
+/* case timeline */
+.tl{position:relative;margin:0 0 90px;padding:10px 0}
+.tl::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--hair)}
+.tl .fill{position:absolute;left:50%;top:0;width:1px;background:var(--ink);height:calc(var(--p,0)*100%);transform:translateX(0)}
+.ev{position:relative;width:50%;padding:0 46px 46px 0;text-align:right}
+.ev:nth-child(odd){margin-left:50%;padding:0 0 46px 46px;text-align:left}
+.ev::after{content:"";position:absolute;top:8px;right:-6px;width:11px;height:11px;background:var(--paper);border:1px solid var(--ink);transform:rotate(45deg);transition:background .4s}
+.ev:nth-child(odd)::after{left:-6px;right:auto}
+.ev.in::after{background:var(--ink)}
+.ev.next::after{background:var(--accent)!important;border-color:var(--accent)}
+.ev .when{font-size:.66rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.ev.next .when{color:var(--accent)}
+.ev h4{font-family:var(--serif);font-size:1.55rem;font-weight:500;margin:.2em 0 .25em}
+.ev p{margin:0;font-size:1rem;color:var(--ink-2)}
+@media (max-width:760px){.tl::before,.tl .fill{left:8px}.ev,.ev:nth-child(odd){width:auto;margin-left:0;padding:0 0 38px 40px;text-align:left}.ev::after,.ev:nth-child(odd)::after{left:3px;right:auto}}
+
+/* chatbot */
+.chat-fab{position:fixed;right:24px;bottom:24px;z-index:40;display:flex;align-items:center;gap:12px;background:var(--ink);color:var(--bone);border:0;padding:16px 22px;font-family:var(--sans);font-size:.7rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;cursor:pointer;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);transition:transform .3s,background .3s}
+.chat-fab:hover{transform:translateY(-2px);background:var(--accent)}
+.chat-fab .dot{width:8px;height:8px;border-radius:50%;background:#8FBF8F;box-shadow:0 0 0 0 rgba(143,191,143,.7);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(143,191,143,0)}100%{box-shadow:0 0 0 0 rgba(143,191,143,0)}}
+.chat{position:fixed;right:24px;bottom:90px;z-index:41;width:min(400px,calc(100vw - 32px));height:min(600px,calc(100vh - 120px));background:var(--paper);border:1px solid var(--ink);display:flex;flex-direction:column;box-shadow:0 30px 70px -20px rgba(0,0,0,.45);opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .35s,transform .35s}
+.chat.open{opacity:1;transform:none;pointer-events:auto}
+.chat header{background:var(--ink);color:var(--bone);padding:16px 18px;display:flex;justify-content:space-between;align-items:center}
+.chat header .n{font-family:var(--serif);font-size:1.2rem;letter-spacing:.14em;text-transform:uppercase}
+.chat header .s{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:#A9A398}
+.chat header button{background:none;border:0;color:var(--bone);font-size:1.5rem;cursor:pointer;line-height:1}
+.log{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px}
+.msg{max-width:88%;padding:11px 15px;font-size:.95rem;line-height:1.55;animation:pop .35s ease both}
+.msg.bot{background:var(--card);border:1px solid var(--hair);align-self:flex-start}
+.msg.me{background:var(--ink);color:var(--bone);align-self:flex-end}
+.msg a{color:inherit}
+.msg .jump{display:inline-block;margin-top:8px;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;border-bottom:1px solid currentColor;cursor:pointer;background:none;border-top:0;border-left:0;border-right:0;padding:0 0 2px;font-family:var(--sans);color:var(--accent)}
+.typing{display:inline-flex;gap:4px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;border-top:1px solid var(--hair);scrollbar-width:thin}
+.chip{flex:none;background:none;border:1px solid var(--hair);padding:7px 12px;font-family:var(--sans);font-size:.78rem;cursor:pointer;color:var(--ink);transition:border-color .2s,background .2s}
+.chip:hover{border-color:var(--ink);background:var(--card)}
+.chat form{display:flex;border-top:1px solid var(--ink)}
+.chat input{flex:1;border:0;background:var(--card);padding:15px;font-family:var(--sans);font-size:.95rem;color:var(--ink);outline:none}
+.chat form button{border:0;background:var(--ink);color:var(--bone);padding:0 18px;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;font-family:var(--sans)}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">M. Langer</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#evolution">Evolution</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="right"><button class="rtoggle" id="rtoggle" type="button" aria-pressed="false"><span class="sw" aria-hidden="true"></span>30 Second View</button></div>
+  </div>
+</nav>
+
+<section id="brief" aria-label="30 second summary">
+  <div class="wrap">
+    <div class="caps" style="margin-bottom:30px">The 30 second view &nbsp;&middot;&nbsp; for busy attorneys</div>
+    <div class="brief">
+      <img src="assets/headshot.jpg" alt="Headshot of Mateo Langer">
+      <div>
+        <h2>Mateo Langer</h2>
+        <p class="role">Legal Intern, Santa Cruz County Attorney&rsquo;s Office &middot; Pre-Law, University of Arizona</p>
+        <ul class="proof">
+          <li><b>3.72</b><span>GPA in Business Management at Eller, with four Dean&rsquo;s List semesters. Graduating May 2028, then law school.</span></li>
+          <li><b>Court</b><span>Attends preliminary hearings with prosecutors and builds event timelines that help attorneys test defendant statements.</span></li>
+          <li><b>96.8</b><span>Average peer rated effort across three team reviews. &ldquo;You never have to chase him down.&rdquo;</span></li>
+        </ul>
+        <div class="seek"><span class="caps" style="display:block;margin-bottom:4px">Currently seeking</span>A legal internship, especially in civil litigation, to complement prosecutorial experience. Interests: prosecution, personal injury, and corporate law.</div>
+        <div class="btns">
+          <a class="btn solid" href="assets/Mateo-Langer-Resume.pdf" target="_blank" rel="noopener">Resume <span class="arr">&rarr;</span></a>
+          <a class="btn" href="mailto:mateo.langer@yahoo.com">Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/mateosantoslanger" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://www.youtube.com/watch?v=axEf6EiOcaE" target="_blank" rel="noopener">Video</a>
+          <button class="btn" type="button" id="fullView">See Full Site</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="caps">Pre-Law &nbsp;&middot;&nbsp; University of Arizona &nbsp;&middot;&nbsp; Eller College of Management</div>
+    <h1>Mateo Langer</h1>
+    <p class="sub">Legal Intern, Santa Cruz County Attorney&rsquo;s Office</p>
+
+    <div class="card-stage">
+      <button class="bizcard" id="bizcard" aria-label="Business card. Select to flip and see contact details.">
+        <div class="face front">
+          <div class="top"><span>Class of 2028</span><span>Tucson, Arizona</span></div>
+          <div><div class="name">Mateo Langer</div><div class="title">Legal Intern &nbsp;&middot;&nbsp; Pre-Law</div></div>
+          <div class="bottom">Santa Cruz County Attorney&rsquo;s Office &nbsp;&middot;&nbsp; Nogales</div>
+        </div>
+        <div class="face back">
+          <div class="mono">M &middot; L</div>
+          <a href="mailto:mateo.langer@yahoo.com" tabindex="-1">mateo.langer@yahoo.com</a>
+          <a href="https://www.linkedin.com/in/mateosantoslanger" target="_blank" rel="noopener" tabindex="-1">LinkedIn Profile</a>
+        </div>
+      </button>
+    </div>
+    <div class="hint">Tap the card to turn it over</div>
+
+    <p class="purpose">A portfolio for attorneys, law offices, and internship coordinators seeking a diligent, coachable legal intern: who I am, how I have grown, and the work that proves it.</p>
+    <div class="btns">
+      <a class="btn solid" href="assets/Mateo-Langer-Resume.pdf" target="_blank" rel="noopener">View Resume <span class="arr">&rarr;</span></a>
+      <button class="btn" type="button" data-open-chat>Ask About Me</button>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="head reveal"><span class="no">I.</span><div><div class="caps">Professional Biography</div><h2>Diligent. Coachable. Already in the courtroom.</h2></div></div>
+    <div class="about">
+      <figure class="portrait reveal" id="portrait" style="margin:0">
+        <img src="assets/headshot.jpg" alt="Professional headshot of Mateo Langer in a navy suit and tie">
+        <figcaption><span class="caps">Mateo Langer</span><button type="button" id="colorBtn" aria-pressed="false">Show in color</button></figcaption>
+      </figure>
+      <div class="reveal">
+        <p class="lead" style="margin-top:0">I am a junior at the University of Arizona&rsquo;s Eller College of Management, studying Business Management and preparing for law school.</p>
+        <p>As a Legal Intern at the Santa Cruz County Attorney&rsquo;s Office in Nogales, I attend preliminary hearings alongside prosecutors and build detailed event timelines that help attorneys test whether a defendant&rsquo;s account holds up. That work rewards the qualities my teammates and supervisors consistently describe in me: reliability, organization, and high standards for accuracy.</p>
+        <p>Beyond the courtroom, I have overseen housing operations as Tau Kappa Epsilon&rsquo;s Housing Manager, served families facing food insecurity with Broomfield FISH, and worked fast paced service roles where clear communication matters. I have earned the Dean&rsquo;s List four times while balancing these responsibilities, and I am seeking legal internships, especially in civil litigation, where I can contribute from day one.</p>
+        <div class="stats">
+          <div class="stat"><b data-count="3.72" data-dec="2">0</b><span>GPA</span></div>
+          <div class="stat"><b data-count="4" data-suffix="&times;">0</b><span>Dean&rsquo;s List</span></div>
+          <div class="stat"><b data-count="96.8" data-dec="1">0</b><span>Avg. peer effort</span></div>
+          <div class="stat"><b data-count="2028" data-plain="1">0</b><span>Graduation</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVOLUTION -->
+<section id="evolution" class="bone">
+  <div class="wrap">
+    <div class="head reveal"><span class="no">II.</span><div><div class="caps">Professional Evolution</div><h2>The evidence behind my growth</h2></div></div>
+    <p class="lead reveal"><strong>What I offer you:</strong> reliability you never have to double check, and a willingness to step into uncomfortable situations so I keep growing. Below I compare how I see myself (Self Perception Inventory) with how others see me (three rounds of 360 peer reviews and a Personal Reputation Survey), and explain my strategy for closing the gaps.</p>
+
+    <div class="story reveal">
+      <div class="caps">The turning point</div>
+      <p>In high school, I did not see the long term cost of the effort I was skipping. When decisions arrived, the University of Arizona was the only school that admitted me; my home state schools, the University of Colorado and Colorado State, turned me down. I was embarrassed, and it flipped a switch. I set out to prove that if I gave everything I had, I could excel. Since then: a 3.72 GPA, four Dean&rsquo;s List semesters, and a legal internship as a junior.<span class="moral">Effort compounds. The choices made today decide which doors are open tomorrow.</span></p>
+    </div>
+
+    <div class="caps reveal" style="margin-bottom:8px">Case timeline</div>
+    <h3 class="reveal" style="margin-bottom:40px">From wake up call to the courtroom</h3>
+    <div class="tl" id="tl"><div class="fill" aria-hidden="true"></div>
+      <div class="ev reveal"><div class="when">Spring 2024</div><h4>The wake up call</h4><p>Admitted only to the University of Arizona after an unfocused high school career. I commit to maximum effort.</p></div>
+      <div class="ev reveal"><div class="when">Summer 2024</div><h4>Service first</h4><p>Begin volunteering with Broomfield FISH, serving families facing food insecurity, while working as a barista.</p></div>
+      <div class="ev reveal"><div class="when">Fall 2024</div><h4>Proof of concept</h4><p>First semester at Eller College of Management. Dean&rsquo;s List.</p></div>
+      <div class="ev reveal"><div class="when">Spring 2025</div><h4>Consistency</h4><p>Dean&rsquo;s List with Distinction. Begin serving at Chicken N Pickle that summer.</p></div>
+      <div class="ev reveal"><div class="when">Fall 2025</div><h4>Leadership</h4><p>Named Housing Manager for Tau Kappa Epsilon. Dean&rsquo;s List again.</p></div>
+      <div class="ev reveal"><div class="when">Spring 2026</div><h4>Four for four</h4><p>Fourth Dean&rsquo;s List semester, with a 3.72 cumulative GPA.</p></div>
+      <div class="ev reveal"><div class="when">Fall 2026</div><h4>Into the courtroom</h4><p>Legal Intern at the Santa Cruz County Attorney&rsquo;s Office. Peers rate my effort 96.8 out of 100 on average across three team reviews.</p></div>
+      <div class="ev reveal next"><div class="when">Next</div><h4>The other side of practice</h4><p>A civil litigation internship, LSAT preparation, and graduation in May 2028.</p></div>
+      <div class="ev reveal next"><div class="when">Then</div><h4>Law school</h4><p>The strongest program I can earn my way into.</p></div>
+    </div>
+
+    <div class="caps reveal" style="margin-bottom:18px">Core values &nbsp;&middot;&nbsp; tap to reveal</div>
+    <div class="values reveal">
+      <button class="vcard" type="button"><div class="in">
+        <div class="f"><div class="w">Diligence</div><div class="caps">01</div></div>
+        <div class="b"><div class="caps">Defined</div><p>Putting in the work and following through every time. Peers rated my effort 94.67, 100, and 95.6 out of 100.</p></div>
+      </div></button>
+      <button class="vcard" type="button"><div class="in">
+        <div class="f"><div class="w">Empathy</div><div class="caps">02</div></div>
+        <div class="b"><div class="caps">Defined</div><p>Understanding people and where they are coming from. I rated helping others and improving society 90 out of 100 as a motivator.</p></div>
+      </div></button>
+      <button class="vcard" type="button"><div class="in">
+        <div class="f"><div class="w">Initiative</div><div class="caps">03</div></div>
+        <div class="b"><div class="caps">Defined</div><p>Seeking new challenges and volunteering for extra responsibility, from a fraternity leadership role to a courtroom internship.</p></div>
+      </div></button>
+    </div>
+
+    <div class="tabs reveal" role="tablist" aria-label="Evolution analysis">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1">01 &middot; Core Values</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2">02 &middot; Communication</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3">03 &middot; Confidence</button>
+    </div>
+
+    <div class="panel show" role="tabpanel" id="p1" aria-labelledby="t1">
+      <span class="tagline">Claim</span>
+      <div class="claim">Diligence You Never Have to Chase</div>
+      <div class="grid2">
+        <div>
+          <span class="tagline">Evidence</span>
+          <ul>
+            <li>Peer rated effort of <strong>94.67, 100, and 95.6</strong> across three 360 rounds; quality of work of 95, 99, and 95.8.</li>
+            <li>Rated <strong>4.0 out of 4</strong> for arriving on time and prepared in Rounds 1 and 2.</li>
+            <li>Self selected as &ldquo;Driven&rdquo; and &ldquo;Empathetic&rdquo; on my SPI.</li>
+          </ul>
+          <blockquote>Extremely reliable. When he takes something on, it gets done, and done right. You never have to chase him down.<cite>Personal Reputation Survey</cite></blockquote>
+          <blockquote>Team member is on top of everything and organized.<cite>360 Review, Round 1</cite></blockquote>
+        </div>
+        <figure class="chart">
+          <div class="legend"><span><i style="background:#141414"></i>Mine</span><span><i style="background:#B8B2A4"></i>Team average</span></div>
+          <svg viewBox="0 0 440 250" role="img" aria-label="Peer rated effort: Round 1 94.67 versus team 95.9; Round 2 100 versus 95.8; Round 3 95.6 versus 94.64">
+            <g stroke="#DDD7CA"><line x1="50" y1="30" x2="430" y2="30"/><line x1="50" y1="90" x2="430" y2="90"/><line x1="50" y1="150" x2="430" y2="150"/><line x1="50" y1="210" x2="430" y2="210"/></g>
+            <g font-size="11" fill="#6E6A62" text-anchor="end"><text x="44" y="34">100</text><text x="44" y="94">95</text><text x="44" y="154">90</text><text x="44" y="214">85</text></g>
+            <rect class="bar" x="80" y="93.96" width="44" height="116.04" fill="#141414"/><rect class="bar" x="128" y="79.2" width="44" height="130.8" fill="#B8B2A4"/>
+            <rect class="bar" x="200" y="30" width="44" height="180" fill="#141414"/><rect class="bar" x="248" y="80.4" width="44" height="129.6" fill="#B8B2A4"/>
+            <rect class="bar" x="320" y="82.8" width="44" height="127.2" fill="#141414"/><rect class="bar" x="368" y="94.32" width="44" height="115.68" fill="#B8B2A4"/>
+            <g font-size="12" font-weight="500" fill="#141414" text-anchor="middle"><text x="102" y="88">94.7</text><text x="222" y="24">100</text><text x="342" y="77">95.6</text></g>
+            <g font-size="11" fill="#2B2B2B" text-anchor="middle" letter-spacing="2"><text x="126" y="234">ROUND 1</text><text x="246" y="234">ROUND 2*</text><text x="366" y="234">ROUND 3</text></g>
+          </svg>
+          <figcaption>Peer rated &ldquo;Amount of Effort,&rdquo; 0 to 100. *Round 2 had a single respondent, so I treat it as directional.</figcaption>
+        </figure>
+      </div>
+      <div class="reason">
+        <span class="tagline">Reasoning &amp; Brand Strategy</span>
+        <p>This is where my identity and reputation align most closely: I see myself as driven, and others see someone who delivers without reminders. The flip side of high standards, noted in my PRS, is that I can struggle to delegate and can be too hard on myself. In a legal office, where accuracy is everything, I will keep the standard but ask early about priorities so my effort goes where the attorney needs it most.</p>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+      <span class="tagline">Claim</span>
+      <div class="claim">Warm by Nature, Making It Visible Sooner</div>
+      <p>My SPI identifies an <strong>Amiable/Analytical</strong> style: thoughtful, process oriented, and supportive, with a preference for direct communication and firm deadlines. The revealing finding is the gap between how I see myself and how people read me at first.</p>
+      <div class="grid2">
+        <div>
+          <span class="tagline">Evidence &middot; Identity vs. Reputation</span>
+          <div class="toggle" role="group" aria-label="Choose a perspective">
+            <button type="button" aria-pressed="true" data-view="self">How I see myself</button>
+            <button type="button" aria-pressed="false" data-view="others">How others see me</button>
+          </div>
+          <div class="words" id="words" aria-live="polite"></div>
+          <p class="gapnote" id="gapnote"></p>
+          <p>My team engagement score stayed above the team average every round: <strong>3.67, 4.0, and 3.8</strong> out of 4, against averages of 3.60, 3.60, and 3.56.</p>
+        </div>
+        <figure class="chart">
+          <svg viewBox="0 0 440 300" role="img" aria-label="Charisma diagnostic: warmth 4.09 and confidence negative 0.45, in the Warmth Zone just left of the Charismatic Zone">
+            <rect x="40" y="10" width="190" height="130" fill="#EFEBE0"/><rect x="230" y="10" width="190" height="130" fill="#E2DED2"/>
+            <rect x="40" y="140" width="190" height="130" fill="#F6F3EC"/><rect x="230" y="140" width="190" height="130" fill="#EFEBE0"/>
+            <line x1="230" y1="10" x2="230" y2="270" stroke="#141414"/><line x1="40" y1="140" x2="420" y2="140" stroke="#141414"/>
+            <g font-size="10" fill="#6E6A62" letter-spacing="2"><text x="48" y="28">WARMTH</text><text x="412" y="28" text-anchor="end">CHARISMATIC</text><text x="48" y="262">DANGER</text><text x="412" y="262" text-anchor="end">CONFIDENCE</text></g>
+            <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5E1A1A"/></marker></defs>
+            <line class="line" x1="221.45" y1="86.83" x2="300" y2="60" stroke="#5E1A1A" stroke-width="1.6" marker-end="url(#ar)"/>
+            <circle cx="221.45" cy="86.83" r="8" fill="#141414" stroke="#F8F6F0" stroke-width="2"/>
+            <text x="210" y="72" font-size="12" font-weight="500" fill="#141414" text-anchor="end">Warmth 4.09</text>
+            <text x="210" y="108" font-size="12" font-weight="500" fill="#141414" text-anchor="end">Confidence &minus;0.45</text>
+            <text x="306" y="58" font-size="11" fill="#5E1A1A" font-weight="500" letter-spacing="1.5">MY GOAL</text>
+            <text x="230" y="292" font-size="10" fill="#6E6A62" text-anchor="middle" letter-spacing="2">CONFIDENCE &rarr;</text>
+          </svg>
+          <figcaption>Charisma Diagnostic, September 2026. Already warm and trustworthy; less than half a point from the Charismatic Zone on confidence.</figcaption>
+        </figure>
+      </div>
+      <div class="reason">
+        <span class="tagline">Reasoning &amp; Brand Strategy</span>
+        <p>The warmth people eventually see in me is real, but because my style is reserved at first, new colleagues can mistake it for disinterest, the opposite of the image I want. My strategy is to make that warmth visible sooner: introducing myself first, asking questions early, and sharing ideas before they feel perfect. My internship provides daily practice, since working alongside prosecutors and court staff demands clear, prompt communication with people I have just met.</p>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+      <span class="tagline">Claim</span>
+      <div class="claim">Building Composure Under Pressure</div>
+      <p>The clearest theme across my feedback: my content is strong, and my delivery is catching up. For a future attorney, it is the most important gap to close.</p>
+      <div class="grid2">
+        <div>
+          <span class="tagline">Evidence</span>
+          <blockquote>Did very well overall, just speak with confidence.<cite>360 Review, Round 1</cite></blockquote>
+          <blockquote>Need to release your worry before speaking.<cite>360 Review, Round 3</cite></blockquote>
+          <blockquote>He was able to shrug it off and continue easily, which I found very admirable and it speaks to his character.<cite>360 Review, Round 3</cite></blockquote>
+          <p>My average across six teamwork behaviors beat the team average in every round, and Round 3 teammates called me &ldquo;good at communicating.&rdquo;</p>
+        </div>
+        <figure class="chart">
+          <div class="legend"><span><i style="background:#141414"></i>Mine</span><span><i style="background:#B8B2A4"></i>Team average</span></div>
+          <svg viewBox="0 0 440 245" role="img" aria-label="Average 360 behavior rating: Mateo 3.73, 4.00, 3.80; team 3.69, 3.70, 3.65">
+            <g stroke="#DDD7CA"><line x1="50" y1="60" x2="430" y2="60"/><line x1="50" y1="135" x2="430" y2="135"/><line x1="50" y1="210" x2="430" y2="210"/></g>
+            <g font-size="11" fill="#6E6A62" text-anchor="end"><text x="44" y="64">4.00</text><text x="44" y="139">3.75</text><text x="44" y="214">3.50</text></g>
+            <polyline class="line" points="100,153 240,150 380,166" fill="none" stroke="#B8B2A4" stroke-width="2.5"/>
+            <polyline class="line" points="100,142.5 240,60 380,120" fill="none" stroke="#141414" stroke-width="2.5"/>
+            <g fill="#141414"><circle cx="100" cy="142.5" r="5.5"/><circle cx="240" cy="60" r="5.5"/><circle cx="380" cy="120" r="5.5"/></g>
+            <g fill="#B8B2A4"><circle cx="100" cy="153" r="4.5"/><circle cx="240" cy="150" r="4.5"/><circle cx="380" cy="166" r="4.5"/></g>
+            <g font-size="12" font-weight="500" fill="#141414" text-anchor="middle"><text x="100" y="130">3.73</text><text x="240" y="48">4.00</text><text x="380" y="108">3.80</text></g>
+            <g font-size="11" fill="#2B2B2B" text-anchor="middle" letter-spacing="2"><text x="100" y="234">ROUND 1</text><text x="240" y="234">ROUND 2*</text><text x="380" y="234">ROUND 3</text></g>
+          </svg>
+          <figcaption>Average of six 360 teamwork behaviors on a 1 to 4 scale, including engagement, listening, and deliverable quality. *Round 2 had one respondent.</figcaption>
+        </figure>
+      </div>
+      <div class="reason">
+        <span class="tagline">Reasoning &amp; Brand Strategy</span>
+        <p>I know my material; my growth area is trusting myself to deliver it without overthinking. Rather than waiting to feel ready, I deliberately put myself in uncomfortable situations at my internship: speaking up more, engaging with attorneys and staff, and learning to think on my feet in a courtroom setting. It builds the confidence I need now and prepares me for the career ahead. Round 3 shows it is working: when I stumble, I recover and keep going.</p>
+      </div>
+    </div>
+
+    <div class="conclusion reveal">
+      <div class="caps" style="color:#9C968A;margin-bottom:10px">Conclusion</div>
+      <h3>Key takeaways &amp; next steps</h3>
+      <ol>
+        <li><span><strong>What stays constant:</strong> diligence and reliability. Every data source agrees on it.</span></li>
+        <li><span><strong>What I am building:</strong> visible confidence and earlier engagement, so people see my warmth from the first meeting.</span></li>
+        <li><span><strong>Where I am headed next:</strong> my current internship is prosecutorial and government focused, so I am seeking a civil litigation internship to experience the other side of practice. My interests include prosecution, personal injury, and corporate law.</span></li>
+        <li><span><strong>Long term:</strong> prepare for the LSAT and earn a place at the strongest law school I can.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video">
+  <div class="wrap">
+    <div class="head reveal"><span class="no">III.</span><div><div class="caps">Professional Persona Video</div><h2>In my own words</h2></div></div>
+    <div class="vgrid reveal">
+      <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/axEf6EiOcaE" title="Mateo Langer Professional Persona Video" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div>
+        <p class="lead" style="font-size:1.35rem">Short on time? Start here.</p>
+        <p>I introduce myself, explain why I am pursuing law, and share what I bring to a legal team: steady reliability, a strong work ethic, and a commitment to keep growing.</p>
+        <a class="btn" href="https://www.youtube.com/watch?v=axEf6EiOcaE" target="_blank" rel="noopener">Watch on YouTube <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="bone">
+  <div class="wrap">
+    <div class="head reveal"><span class="no">IV.</span><div><div class="caps">Portfolio</div><h2>Exhibits</h2></div></div>
+    <p class="lead reveal" style="margin-bottom:40px">Each exhibit supports a claim above: independent analytical writing, evidence based argument, and professional teamwork. Open one to review it.</p>
+    <div class="exhibits reveal">
+      <details class="exhibit" open>
+        <summary><span class="ex">Exhibit A</span><span class="t">&ldquo;C.R.E.A.M.&rdquo; Music Review<small>Solely authored &middot; LAS 335, Rap, Culture, and God</small></span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="detail"><span></span>
+          <dl>
+            <dt>Context</dt><dd>Written for Professor Alejandro Nava&rsquo;s course, analyzing how the Wu-Tang Clan song critiques economic pressure in 1990s New York.</dd>
+            <dt>Claim</dt><dd>I build arguments from primary source evidence and connect them to broader social systems.</dd>
+            <dt>Reasoning</dt><dd>Attorneys must understand the circumstances behind a case. This review examines poverty, crime, and the cycle of incarceration, showing I think about the people and systems behind the facts.</dd>
+          </dl>
+          <div><a class="btn solid" href="assets/music-reviews.pdf#page=4" target="_blank" rel="noopener">Read Exhibit <span class="arr">&rarr;</span></a></div>
+        </div>
+      </details>
+      <details class="exhibit">
+        <summary><span class="ex">Exhibit B</span><span class="t">&ldquo;Sing About Me, I&rsquo;m Dying of Thirst&rdquo; Review<small>Solely authored &middot; LAS 335</small></span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="detail"><span></span>
+          <dl>
+            <dt>Context</dt><dd>A close reading of Kendrick Lamar&rsquo;s two part song about losing a friend to gang violence and a search for faith.</dd>
+            <dt>Claim</dt><dd>I interpret layered material carefully and support every interpretation with specific lines and details.</dd>
+            <dt>Reasoning</dt><dd>Close, evidence driven reading is the core skill behind reviewing testimony and case records.</dd>
+          </dl>
+          <div><a class="btn solid" href="assets/music-reviews.pdf#page=5" target="_blank" rel="noopener">Read Exhibit <span class="arr">&rarr;</span></a></div>
+        </div>
+      </details>
+      <details class="exhibit">
+        <summary><span class="ex">Exhibit C</span><span class="t">&ldquo;Make Real Clear&rdquo; for Snapple<small>Team consulting proposal &middot; BCOM 314</small></span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="detail"><span></span>
+          <dl>
+            <dt>Situation</dt><dd>A six person consulting team proposed a 12 week, $150,000 ingredient transparency pilot to Snapple.</dd>
+            <dt>Task</dt><dd>I presented the situation and background that framed the problem.</dd>
+            <dt>Action</dt><dd>Using FDA labeling guidance and FMI/NIQ shopper data, I showed how the word &ldquo;Real&rdquo; creates an expectation the label does not support, and that 76% of shoppers say transparency matters.</dd>
+            <dt>Result</dt><dd>My slides set up the full plan and demonstrate the claim versus evidence thinking at the heart of consumer protection law.</dd>
+          </dl>
+          <div><img src="assets/snapple-05.jpg" alt="Mateo's slide titled Real creates an expectation" loading="lazy"><p style="margin:14px 0 0"><a class="btn solid" href="assets/snapple-make-real-clear.pdf#page=5" target="_blank" rel="noopener">View Exhibit <span class="arr">&rarr;</span></a></p></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+  <div class="wrap">
+    <div class="head reveal"><span class="no">V.</span><div><div class="caps">Resume</div><h2>Experience at a glance</h2></div></div>
+    <a class="btn solid reveal" href="assets/Mateo-Langer-Resume.pdf" target="_blank" rel="noopener">Download Full Resume &middot; PDF <span class="arr">&rarr;</span></a>
+    <div class="res reveal">
+      <div class="col">
+        <h4>Legal Intern</h4>
+        <div class="meta">Santa Cruz County Attorney&rsquo;s Office &middot; Nogales, AZ &middot; Oct 2026 to Present</div>
+        <ul><li>Attend preliminary hearings alongside prosecutors</li><li>Construct event timelines that help attorneys identify inconsistencies in defendant statements</li><li>Support case preparation tasks that strengthen prosecutions</li></ul>
+        <h4>Housing Manager</h4>
+        <div class="meta">Tau Kappa Epsilon &middot; Tucson, AZ &middot; Oct 2025 to Aug 2026</div>
+        <ul><li>Oversaw housing operations and coordinated facility maintenance</li><li>Served as liaison between residents and leadership; ensured policy compliance</li></ul>
+      </div>
+      <div class="col">
+        <h4>Education</h4>
+        <div class="meta">University of Arizona, Eller College of Management &middot; Expected May 2028</div>
+        <ul><li>B.S. in Business Administration, Business Management</li><li>GPA 3.72 &middot; Dean&rsquo;s List four semesters</li></ul>
+        <h4>Community &amp; Service</h4>
+        <div class="meta">Broomfield FISH &middot; Community Outreach Volunteer &middot; 2024 to Present</div>
+        <ul><li>Distribute food and essentials to families facing food insecurity</li></ul>
+        <h4>Additional Experience</h4>
+        <div class="meta">Server, Chicken N Pickle &middot; Barista, Lifetime Inc.</div>
+        <ul><li>Fast paced, customer focused roles built on accuracy and clear communication</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="caps" style="color:#9C968A;margin-bottom:20px">VI. &nbsp;Contact</div>
+    <h2>Let&rsquo;s Talk</h2>
+    <p>I am actively seeking legal internship opportunities, especially in civil litigation, and I would welcome the chance to connect.</p>
+    <div class="btns">
+      <a class="btn" href="mailto:mateo.langer@yahoo.com">mateo.langer@yahoo.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/mateosantoslanger" target="_blank" rel="noopener">LinkedIn <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 Mateo Langer &nbsp;&middot;&nbsp; Tucson, Arizona</footer>
+
+<!-- CHAT ASSISTANT -->
+<button class="chat-fab" type="button" data-open-chat aria-controls="chat" aria-expanded="false"><span class="dot"></span>Ask About Mateo</button>
+<div class="chat" id="chat" role="dialog" aria-label="Ask about Mateo" aria-hidden="true">
+  <header><div><div class="n">Ask About Mateo</div><div class="s">Answers drawn from this site</div></div><button type="button" id="chatClose" aria-label="Close">&times;</button></header>
+  <div class="log" id="log" aria-live="polite"></div>
+  <div class="chips" id="chips"></div>
+  <form id="chatForm" autocomplete="off"><input id="chatInput" type="text" placeholder="Ask a question about Mateo&hellip;" aria-label="Your question"><button type="submit">Send</button></form>
+</div>
+
+<script>
+/* reveal on scroll + chart draw + counters */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const chartIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('drawn')}}),{threshold:.3});
+document.querySelectorAll('figure.chart').forEach(el=>chartIO.observe(el));
+const countIO=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,end=+el.dataset.count,dec=+(el.dataset.dec||0),suf=el.dataset.suffix||'',plain=el.dataset.plain;countIO.unobserve(el);const start=plain?end-30:0,t0=performance.now(),d=1400;
+  (function tick(t){const p=Math.min((t-t0)/d,1),v=start+(end-start)*(1-Math.pow(1-p,3));el.innerHTML=v.toFixed(dec)+suf;if(p<1)requestAnimationFrame(tick)})(t0)}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>countIO.observe(el));
+
+/* nav active state */
+const links=[...document.querySelectorAll('nav ul a')];
+const secIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('section[id]').forEach(s=>secIO.observe(s));
+
+/* business card: flip + tilt */
+const card=document.getElementById('bizcard');let flipped=false;
+card.addEventListener('click',e=>{if(e.target.closest('a'))return;flipped=!flipped;card.classList.toggle('flipped',flipped);card.style.transform='';card.querySelectorAll('.back a').forEach(a=>a.tabIndex=flipped?0:-1)});
+if(matchMedia('(hover:hover)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transition='transform .1s';card.style.transform=`rotateY(${(flipped?180:0)+x*14}deg) rotateX(${-y*10}deg)`});
+  card.addEventListener('mouseleave',()=>{card.style.transition='';card.style.transform=''});
+}
+
+/* portrait color toggle */
+const colorBtn=document.getElementById('colorBtn'),portrait=document.getElementById('portrait');
+colorBtn.addEventListener('click',()=>{const on=portrait.classList.toggle('color');colorBtn.setAttribute('aria-pressed',on);colorBtn.textContent=on?'Show in monochrome':'Show in color'});
+
+/* value cards */
+document.querySelectorAll('.vcard').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('flipped')));
+
+/* tabs */
+const tabs=[...document.querySelectorAll('.tab')];
+function selectTab(t){tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;const p=document.getElementById(x.getAttribute('aria-controls'));p.hidden=!on;p.classList.toggle('show',on);if(on)p.querySelectorAll('figure.chart').forEach(f=>{f.classList.remove('drawn');requestAnimationFrame(()=>requestAnimationFrame(()=>f.classList.add('drawn')))})})}
+tabs.forEach((t,i)=>{t.addEventListener('click',()=>selectTab(t));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];selectTab(n);n.focus()}})});
+
+/* identity vs reputation toggle */
+const views={
+  self:{words:['Empathetic','Driven','Rule Follower','Well Rounded','Anxious','Easygoing','Spontaneous'],note:'The seven words I chose for myself on the Self Perception Inventory.'},
+  others:{words:['Reliable','Organized','Detailed','Good ideas','Reliable listener','Playful energy','Reserved at first','Hard to read','Holds back input'],note:'Recurring themes from three 360 rounds and my Personal Reputation Survey.'}
+};
+const wordsEl=document.getElementById('words'),noteEl=document.getElementById('gapnote');
+function showView(v){wordsEl.innerHTML=views[v].words.map((w,i)=>`<span class="word" style="animation-delay:${i*60}ms">${w}</span>`).join('');noteEl.textContent=views[v].note;document.querySelectorAll('.toggle button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.view===v))}
+document.querySelectorAll('.toggle button').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
+showView('self');
+
+/* timeline progress */
+const tl=document.getElementById('tl');
+function tlProgress(){const r=tl.getBoundingClientRect(),vh=innerHeight;const p=Math.min(Math.max((vh*.65-r.top)/r.height,0),1);tl.style.setProperty('--p',p)}
+addEventListener('scroll',tlProgress,{passive:true});tlProgress();
+
+/* 30 second view */
+const rt=document.getElementById('rtoggle');
+function setRecruiter(on,save){document.body.classList.toggle('recruiter',on);rt.setAttribute('aria-pressed',on);if(save){try{localStorage.setItem('recruiter',on?'1':'0')}catch(e){}}scrollTo({top:0,behavior:'smooth'})}
+rt.addEventListener('click',()=>setRecruiter(!document.body.classList.contains('recruiter'),true));
+document.getElementById('fullView').addEventListener('click',()=>setRecruiter(false,true));
+try{if(localStorage.getItem('recruiter')==='1'){document.body.classList.add('recruiter');rt.setAttribute('aria-pressed','true')}}catch(e){}
+
+/* ===== Ask About Mateo assistant ===== */
+const KB=[
+ {k:['hello','hi','hey','good morning','good afternoon','greetings','yo'],a:"Hello. I can answer questions about Mateo&rsquo;s experience, education, legal interests, strengths, and work samples. What would you like to know?"},
+ {k:['who is','about him','about mateo','introduce','summary','tell me about','overview','background'],a:"Mateo Langer is a junior at the University of Arizona&rsquo;s Eller College of Management, studying Business Management on a pre-law track. He is currently a Legal Intern at the Santa Cruz County Attorney&rsquo;s Office in Nogales, where he attends preliminary hearings with prosecutors and builds case timelines. Peers consistently describe him as reliable, organized, and hardworking.",go:'about'},
+ {k:['intern','internship','county attorney','santa cruz','nogales','court','hearing','prosecutor','timeline','current job','what does he do','legal experience','experience'],a:"Since October 2026, Mateo has been a Legal Intern at the Santa Cruz County Attorney&rsquo;s Office in Nogales, Arizona. He attends preliminary hearings alongside prosecutors, constructs detailed event timelines that help attorneys spot inconsistencies in defendant statements, and supports other case preparation tasks.",go:'resume'},
+ {k:['gpa','grade','grades','dean','academic','transcript'],a:"Mateo holds a 3.72 GPA and has made the Dean&rsquo;s List four times (Fall 2024, Spring 2025 with Distinction, Fall 2025, and Spring 2026)."},
+ {k:['school','university','college','education','major','degree','study','studying','graduate','graduation','eller','arizona'],a:"Mateo is pursuing a B.S. in Business Administration with a major in Business Management at the University of Arizona&rsquo;s Eller College of Management. He expects to graduate in May 2028, with a 3.72 GPA."},
+ {k:['law school','lsat','after college','after graduation','future','long term','career goal','goals','plans'],a:"Mateo plans to attend law school after graduating in 2028. His next steps are preparing for the LSAT and earning a place at the strongest law school he can.",go:'evolution'},
+ {k:['kind of law','type of law','area of law','practice area','interested in','interests in law','civil','litigation','personal injury','corporate','prosecution','criminal'],a:"Mateo is interested in prosecution, personal injury, and corporate law. Because his current internship is prosecutorial and government focused, he is specifically seeking a civil litigation internship next to experience the other side of legal practice."},
+ {k:['looking for','seeking','available','hire','hiring','opportunit','open to','position','role','job'],a:"Mateo is actively seeking legal internship opportunities, especially in civil litigation. The best way to reach him is mateo.langer@yahoo.com.",go:'contact'},
+ {k:['strength','strengths','good at','why hire','best quality','qualities','stand out','value','offer'],a:"His clearest strength is reliability. Peers rated his effort 94.67, 100, and 95.6 out of 100 across three rounds, and one reviewer wrote that you never have to chase him down. He is also organized, holds high standards for accuracy, and brings warmth that lifts team morale.",go:'evolution'},
+ {k:['weakness','weaknesses','improve','improvement','growth area','struggle','challenge','confidence','public speaking','speaking','nervous'],a:"Mateo&rsquo;s main growth area is speaking confidence. His Charisma Diagnostic placed him high on warmth (4.09) and just below zero on confidence (&minus;0.45). He is addressing it directly by speaking up more and putting himself in uncomfortable situations at his internship. Teammates already noted that when he stumbled mid presentation, he recovered and kept going.",go:'evolution'},
+ {k:['core value','values','believe','principles'],a:"Mateo&rsquo;s three core values are Diligence (following through every time), Empathy (understanding where people are coming from), and Initiative (seeking challenges and taking on extra responsibility).",go:'evolution'},
+ {k:['communication','communicate','style','personality','team','teamwork','teammate','360','work with','collaborat','spi'],a:"His Self Perception Inventory identifies an Amiable/Analytical style: thoughtful, process oriented, and supportive, with a preference for direct communication and firm deadlines. His team engagement scores beat the team average in all three 360 rounds. Some people read him as reserved at first, so he is working to make his warmth visible sooner.",go:'evolution'},
+ {k:['story','high school','turning point','motivat','why does he work','why work hard','changed','drive'],a:"In high school, Mateo did not see the long term cost of skipping effort, and the University of Arizona was the only school that admitted him. That moment flipped a switch: he committed to giving everything he had, and has since earned a 3.72 GPA, four Dean&rsquo;s List semesters, and a legal internship as a junior.",go:'evolution'},
+ {k:['writing','write','music','review','reviews','sample','samples','portfolio','work sample','exhibit','cream','kendrick'],a:"His portfolio includes two solely authored music reviews from LAS 335 (Rap, Culture, and God): one on Wu-Tang Clan&rsquo;s &ldquo;C.R.E.A.M.,&rdquo; analyzing poverty and the cycle of incarceration, and one on Kendrick Lamar&rsquo;s &ldquo;Sing About Me, I&rsquo;m Dying of Thirst.&rdquo; It also includes a team consulting proposal for Snapple.",go:'portfolio'},
+ {k:['snapple','project','presentation','consulting','bcom','marketing'],a:"For BCOM 314, Mateo&rsquo;s six person team proposed a $150,000, 12 week ingredient transparency pilot to Snapple called &ldquo;Make Real Clear.&rdquo; Mateo presented the situation and background, using FDA labeling guidance and shopper data to show how the word &ldquo;Real&rdquo; can create expectations a label does not support.",go:'portfolio'},
+ {k:['leader','leadership','fraternity','tke','tau kappa','housing'],a:"Mateo served as Housing Manager for Tau Kappa Epsilon from October 2025 to August 2026, overseeing housing operations, coordinating maintenance, serving as liaison between residents and leadership, and ensuring compliance with chapter and university policies.",go:'resume'},
+ {k:['volunteer','service','community','fish','food','nonprofit'],a:"Since June 2024, Mateo has volunteered with Broomfield FISH in Colorado, organizing and distributing food, clothing, and essential supplies to families facing food insecurity."},
+ {k:['skill','skills','excel','powerpoint','software','technical'],a:"His skills include Microsoft Excel (data analysis and formulas), PowerPoint, and Word, along with case timeline construction, data organization, and customer service."},
+ {k:['work history','server','barista','chicken','lifetime','other jobs','part time'],a:"Alongside school, Mateo has worked as a server at Chicken N Pickle (since June 2025) and as a barista at Lifetime Inc. (summer 2024), roles built on accuracy and clear communication in fast paced settings.",go:'resume'},
+ {k:['contact','email','reach','get in touch','linkedin','connect','phone'],a:"You can reach Mateo at <a href=\"mailto:mateo.langer@yahoo.com\">mateo.langer@yahoo.com</a> or connect on <a href=\"https://www.linkedin.com/in/mateosantoslanger\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>.",go:'contact'},
+ {k:['resume','cv'],a:"You can download Mateo&rsquo;s full resume as a PDF <a href=\"assets/Mateo-Langer-Resume.pdf\" target=\"_blank\" rel=\"noopener\">here</a>.",go:'resume'},
+ {k:['video','watch','youtube'],a:"Mateo&rsquo;s Professional Persona Video is embedded on this page, where he introduces himself and explains why he is pursuing law.",go:'video'},
+ {k:['hobby','hobbies','free time','fun','outside of work','interests','enjoy'],a:"Outside of school and work, Mateo enjoys film and media, fitness, creative writing, photography, and music, which is what led to his music reviews."},
+ {k:['from','hometown','where','colorado','live'],a:"Mateo is from Broomfield, Colorado, and attends the University of Arizona in Tucson. His internship is in Nogales, Arizona."},
+ {k:['thank','thanks','appreciate','great','cool','awesome'],a:"You are welcome. If you would like to continue the conversation with Mateo directly, his email is mateo.langer@yahoo.com."}
+];
+const STARTERS=["What does he do at his internship?","What kind of law interests him?","What are his strengths?","What is he working to improve?","Show me his writing","How do I contact him?"];
+const log=document.getElementById('log'),chips=document.getElementById('chips'),chat=document.getElementById('chat'),input=document.getElementById('chatInput'),fab=document.querySelector('.chat-fab');
+function norm(s){return ' '+s.toLowerCase().replace(/[^a-z0-9' ]/g,' ').replace(/\s+/g,' ')+' '}
+function answer(q){const t=norm(q);let best=null,score=0;
+  KB.forEach(item=>{let s=0;item.k.forEach(k=>{const kk=k.toLowerCase();if(kk.length<=3?t.includes(' '+kk+' '):t.includes(kk))s+=kk.split(' ').length+ (kk.length>6?.5:0)});if(s>score){score=s;best=item}});
+  return best||{a:"I do not have that detail on this site. You could ask about Mateo&rsquo;s internship, education, legal interests, strengths, values, or writing samples, or email him directly at <a href=\"mailto:mateo.langer@yahoo.com\">mateo.langer@yahoo.com</a>."}}
+function add(html,who){const d=document.createElement('div');d.className='msg '+who;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+function ask(q){if(!q.trim())return;add(q.replace(/</g,'&lt;'),'me');const typing=add('<span class="typing"><i></i><i></i><i></i></span>','bot');
+  const r=answer(q);setTimeout(()=>{typing.innerHTML=r.a+(r.go?`<br><button class="jump" data-go="${r.go}">Go to section &rarr;</button>`:'');log.scrollTop=log.scrollHeight},650+Math.random()*400)}
+function renderChips(){chips.innerHTML=STARTERS.map(s=>`<button class="chip" type="button">${s}</button>`).join('')}
+chips.addEventListener('click',e=>{const b=e.target.closest('.chip');if(b)ask(b.textContent)});
+log.addEventListener('click',e=>{const b=e.target.closest('.jump');if(b){document.getElementById(b.dataset.go).scrollIntoView({behavior:'smooth'});if(innerWidth<700)toggleChat(false)}});
+document.getElementById('chatForm').addEventListener('submit',e=>{e.preventDefault();ask(input.value);input.value=''});
+let greeted=false;
+function toggleChat(open){chat.classList.toggle('open',open);chat.setAttribute('aria-hidden',!open);fab.setAttribute('aria-expanded',open);
+  if(open){if(!greeted){greeted=true;add("Good day. I am a guide to Mateo Langer&rsquo;s professional background. Ask me anything, or choose a question below.",'bot');renderChips()}setTimeout(()=>input.focus(),300)}}
+document.querySelectorAll('[data-open-chat]').forEach(b=>b.addEventListener('click',()=>toggleChat(!chat.classList.contains('open')||b!==fab)));
+document.getElementById('chatClose').addEventListener('click',()=>toggleChat(false));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&chat.classList.contains('open'))toggleChat(false)});
+</script>
+</body>
+</html>
