@@ -11,13 +11,13 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mateo Langer | Pre-Law Professional Portfolio">
 <meta property="og:description" content="Legal Intern at the Santa Cruz County Attorney's Office and pre-law Business Management student at the University of Arizona.">
-<meta property="og:url" content="__SITE_URL__">
-<meta property="og:image" content="__SITE_URL__assets/og-image.jpg">
+<meta property="og:url" content="https://mateolanger.github.io/">
+<meta property="og:image" content="https://mateolanger.github.io/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Mateo Langer, Legal Intern, pre-law portfolio">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="__SITE_URL__assets/og-image.jpg">
+<meta name="twitter:image" content="https://mateolanger.github.io/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -208,6 +208,26 @@ svg text{font-family:var(--sans)}
 .contact .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 footer{background:#0B0B0B;color:#7D776C;text-align:center;padding:24px;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase}
 
+/* word map */
+.wm{margin-top:90px;border-top:1px solid var(--ink);padding-top:34px}
+.wm-top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+.wm-top h3{margin:6px 0 0}
+.cloud{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 26px;padding:44px 20px;background:var(--card);border:1px solid var(--hair);min-height:300px}
+.wd{background:none;border:0;padding:2px 4px;cursor:pointer;font-family:var(--serif);color:var(--ink);line-height:1.1;transition:opacity .4s,transform .4s,color .3s;border-bottom:1px solid transparent}
+.wd:hover,.wd.sel{border-color:currentColor}
+.wd.sel{color:var(--accent)}
+.wd.dim{opacity:.13;transform:scale(.94)}
+.wd.w5{font-size:3.4rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.wd.w4{font-size:2.5rem;font-weight:500}
+.wd.w3{font-size:1.9rem;font-style:italic}
+.wd.w2{font-size:1.4rem;color:var(--ink-2)}
+.wd.w1{font-family:var(--sans);font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.wm-detail{border:1px solid var(--hair);border-top:0;background:var(--paper);padding:20px 26px;min-height:96px}
+.wm-detail .src{font-size:.64rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.wm-detail p{margin:0;font-family:var(--serif);font-size:1.2rem;line-height:1.5}
+.wm-key{font-size:.82rem;color:var(--muted);margin-top:12px}
+@media (max-width:760px){.wd.w5{font-size:2.2rem}.wd.w4{font-size:1.75rem}.wd.w3{font-size:1.4rem}.cloud{gap:4px 16px;padding:30px 12px}}
+
 /* recruiter toggle */
 .rtoggle{display:flex;align-items:center;gap:10px;background:none;border:0;cursor:pointer;font-family:var(--sans);font-size:.62rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);padding:6px 0;margin-left:30px}
 .rtoggle .sw{width:34px;height:18px;border:1px solid var(--ink);position:relative;transition:background .3s;flex:none}
@@ -368,6 +388,20 @@ body.recruiter>header.hero,body.recruiter>section:not(#brief),body.recruiter nav
           <div class="stat"><b data-count="2028" data-plain="1">0</b><span>Graduation</span></div>
         </div>
       </div>
+    </div>
+
+    <div class="wm reveal" id="wordmap">
+      <div class="wm-top">
+        <div><div class="caps">In other words</div><h3>The words that describe me, by the evidence</h3></div>
+        <div class="toggle" role="group" aria-label="Filter the word map" style="margin:0">
+          <button type="button" aria-pressed="true" data-wm="all">All</button>
+          <button type="button" aria-pressed="false" data-wm="self">My view</button>
+          <button type="button" aria-pressed="false" data-wm="others">Others&rsquo; view</button>
+        </div>
+      </div>
+      <div class="cloud" id="cloud" aria-label="Word map. Select a word to see its source."></div>
+      <div class="wm-detail" id="wmDetail" aria-live="polite"><div class="src">Select any word</div><p>Each word is sized by how many sources support it: my Self Perception Inventory, three rounds of 360 peer reviews, and my Personal Reputation Survey.</p></div>
+      <div class="wm-key">Larger words appear in more sources. Words shared by my view and others&rsquo; view are where my identity and reputation align.</div>
     </div>
   </div>
 </section>
@@ -690,9 +724,41 @@ const views={
   others:{words:['Reliable','Organized','Detailed','Good ideas','Reliable listener','Playful energy','Reserved at first','Hard to read','Holds back input'],note:'Recurring themes from three 360 rounds and my Personal Reputation Survey.'}
 };
 const wordsEl=document.getElementById('words'),noteEl=document.getElementById('gapnote');
-function showView(v){wordsEl.innerHTML=views[v].words.map((w,i)=>`<span class="word" style="animation-delay:${i*60}ms">${w}</span>`).join('');noteEl.textContent=views[v].note;document.querySelectorAll('.toggle button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.view===v))}
-document.querySelectorAll('.toggle button').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
+function showView(v){wordsEl.innerHTML=views[v].words.map((w,i)=>`<span class="word" style="animation-delay:${i*60}ms">${w}</span>`).join('');noteEl.textContent=views[v].note;document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.view===v))}
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
 showView('self');
+
+/* word map */
+const WORDS=[
+ {w:'Reliable',n:5,g:'others',s:'Personal Reputation Survey; 360 Rounds 2 and 3',q:'&ldquo;Extremely reliable. When he takes something on, it gets done, and done right.&rdquo; Teammates also called me a &ldquo;reliable listener.&rdquo;'},
+ {w:'Hardworking',n:5,g:'both',s:'360 effort scores; Personal Reputation Survey; SPI',q:'Peer rated effort of 94.67, 100, and 95.6, plus a &ldquo;strong work ethic&rdquo; that &ldquo;doesn&rsquo;t cut corners, even when no one is checking.&rdquo;'},
+ {w:'Organized',n:5,g:'others',s:'360 Rounds 1 and 2; Personal Reputation Survey',q:'&ldquo;On top of everything and organized&rdquo; and &ldquo;has a clear system for how he works.&rdquo;'},
+ {w:'Driven',n:4,g:'both',s:'SPI; Personal Reputation Survey',q:'I chose &ldquo;Driven&rdquo; for myself, and others describe high standards and work that is &ldquo;detailed and polished.&rdquo;'},
+ {w:'Positive',n:4,g:'others',s:'360 Rounds 1, 2, and 3',q:'Team environment scores of 95, 100, and 96, and teammates said I &ldquo;always bring a good vibe.&rdquo;'},
+ {w:'Idea Generator',n:4,g:'others',s:'360 Rounds 2 and 3',q:'&ldquo;Has good ideas&rdquo; and is &ldquo;always contributing new ideas to succeed better as a team.&rdquo;'},
+ {w:'Accountable',n:3,g:'others',s:'360 Rounds 1, 2, and 3; Personal Reputation Survey',q:'Rated above the team average every round for holding teammates accountable, and described as keeping others on track.'},
+ {w:'Empathetic',n:3,g:'self',s:'SPI',q:'One of the seven words I chose for myself, and I rated helping others 90 out of 100 as a motivator.'},
+ {w:'Resilient',n:3,g:'others',s:'360 Round 3',q:'&ldquo;He was able to shrug it off and continue easily, which I found very admirable.&rdquo;'},
+ {w:'Communicator',n:3,g:'others',s:'360 Rounds 1 and 3',q:'&ldquo;A good speaker&rdquo; with &ldquo;editing skills,&rdquo; and &ldquo;good at communicating.&rdquo;'},
+ {w:'Detailed',n:3,g:'others',s:'Personal Reputation Survey; 360 quality scores',q:'&ldquo;His work is detailed and polished because he cares about getting it exactly right.&rdquo;'},
+ {w:'Playful',n:2,g:'others',s:'360 Rounds 1 and 3',q:'&ldquo;A breath of fresh air when you have to present something serious.&rdquo;'},
+ {w:'Loyal',n:2,g:'others',s:'Personal Reputation Survey',q:'&ldquo;Once you do, he&rsquo;s a dependable friend who actually shows up.&rdquo;'},
+ {w:'Easygoing',n:2,g:'self',s:'SPI',q:'How I see myself. Others tend to see this once they know me, which is the gap I am working to close.'},
+ {w:'Rule Follower',n:2,g:'self',s:'SPI',q:'My own description, echoed by others who see me as organized and process minded.'},
+ {w:'Pragmatic',n:2,g:'self',s:'SPI informal team role',q:'My SPI places me in the Pragmatist role: practical, grounded evaluations of ideas.'},
+ {w:'Well Rounded',n:1,g:'self',s:'SPI',q:'One of the seven words I chose for myself.'},
+ {w:'Genuine',n:1,g:'others',s:'Personal Reputation Survey',q:'&ldquo;Loyal and genuine once you know him.&rdquo;'},
+ {w:'Spontaneous',n:1,g:'self',s:'SPI',q:'One of the seven words I chose for myself.'},
+ {w:'Punctual',n:1,g:'others',s:'360 Rounds 1 and 2',q:'Rated 4.0 out of 4 for arriving on time and prepared.'}
+];
+const order=[17,6,2,13,0,9,15,3,11,1,7,4,19,10,5,12,14,8,16,18];
+const cloud=document.getElementById('cloud'),wmDetail=document.getElementById('wmDetail');
+cloud.innerHTML=order.map(i=>{const d=WORDS[i];return `<button type="button" class="wd w${d.n}" data-i="${i}" data-g="${d.g}">${d.w}</button>`}).join('');
+cloud.addEventListener('click',e=>{const b=e.target.closest('.wd');if(!b)return;cloud.querySelectorAll('.wd').forEach(x=>x.classList.toggle('sel',x===b));const d=WORDS[b.dataset.i];
+  wmDetail.innerHTML=`<div class="src">${d.w} &middot; ${d.s}</div><p>${d.q}</p>`});
+document.querySelectorAll('[data-wm]').forEach(btn=>btn.addEventListener('click',()=>{const v=btn.dataset.wm;
+  document.querySelectorAll('[data-wm]').forEach(x=>x.setAttribute('aria-pressed',x===btn));
+  cloud.querySelectorAll('.wd').forEach(w=>{const g=w.dataset.g;w.classList.toggle('dim',v!=='all'&&g!==v&&g!=='both')})}));
 
 /* timeline progress */
 const tl=document.getElementById('tl');
@@ -732,6 +798,7 @@ const KB=[
  {k:['video','watch','youtube'],a:"Mateo&rsquo;s Professional Persona Video is embedded on this page, where he introduces himself and explains why he is pursuing law.",go:'video'},
  {k:['hobby','hobbies','free time','fun','outside of work','interests','enjoy'],a:"Outside of school and work, Mateo enjoys film and media, fitness, creative writing, photography, and music, which is what led to his music reviews."},
  {k:['from','hometown','where','colorado','live'],a:"Mateo is from Broomfield, Colorado, and attends the University of Arizona in Tucson. His internship is in Nogales, Arizona."},
+ {k:['describe','words','adjective','personality like','what is he like','word map'],a:"The words with the most supporting evidence are Reliable, Hardworking, and Organized, followed by Driven, Positive, and Idea Generator. You can explore all of them, with sources, in the word map.",go:'wordmap'},
  {k:['thank','thanks','appreciate','great','cool','awesome'],a:"You are welcome. If you would like to continue the conversation with Mateo directly, his email is mateo.langer@yahoo.com."}
 ];
 const STARTERS=["What does he do at his internship?","What kind of law interests him?","What are his strengths?","What is he working to improve?","Show me his writing","How do I contact him?"];
